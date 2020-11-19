@@ -7,6 +7,7 @@ import { PrivateRoute } from './components/PrivateRoute';
 import { FriendLogin } from './components/FriendLogin';
 import { AddFriendForm } from './components/AddFriendForm';
 import { FriendsList } from './components/FriendsList';
+import { EditingList } from './components/EditingList';
 
 
 function App() {  
@@ -31,7 +32,7 @@ function App() {
           
             <PrivateRoute path = "/addfriend" component = {AddFriendForm}/>
             
-            <Route path = "/editingpage"/>    
+            <Route path="/editingpage" component={EditingList}/>    
 
           </Switch>
         </div>

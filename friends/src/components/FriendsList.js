@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../util/axiosWithAuth';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 export const FriendsList = () => {
 
@@ -16,6 +16,7 @@ export const FriendsList = () => {
 
     const params = useParams();
     console.log("Params of Friend List", params);
+    const history = useHistory();
 
 
     useEffect(() => { 
@@ -48,7 +49,7 @@ export const FriendsList = () => {
                         <p >Friend Age:  {item.age}</p>
                         <p >Friend Email:  {item.email}</p>
                         <div>
-                            <button className = "list-button">Edit</button>
+                            <button className = "list-button" onClick = {() => history.push('/editingpage')}>Edit</button>
                             <button className="list-button" onClick={() => removeFriend(item)}>Remove</button>
                         </div>
                     </div>

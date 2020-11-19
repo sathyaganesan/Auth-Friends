@@ -27,7 +27,7 @@ export const FriendLogin = (props) => {
             .post(`http://localhost:5000/api/login`, {username: friendLogin.username, password: friendLogin.password})
             .then((res) => {
                 localStorage.setItem('token', res.data.payload);
-                props.history.push('/') //need clarification
+                props.history.push('/')
                 console.log(res);
             })
             .catch((err) => {
